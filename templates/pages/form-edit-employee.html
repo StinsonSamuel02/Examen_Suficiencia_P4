@@ -1,0 +1,53 @@
+{% extends '../index.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h4 style="text-align: center">Editar Bus</h4>
+        <div class="card py-2">
+            <div class="card-body">
+                <form action="/employees/edit/{{ employee.id }}" method="post">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label for="first_name">Nombre:</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name"
+                               value="{{ employee.first_name }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last_name">Apellidos:</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name"
+                               value="{{ employee.last_name }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cid">Carnet de Identidad:</label>
+                        <input type="text" class="form-control" id="cid" name="cid" value="{{ employee.cid }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="driver_licence">Licencia de Conducción:</label>
+                        <input type="text" class="form-control" id="driver_licence" name="driver_licence"
+                               value="{{ employee.driver_licence }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bus">Bus:</label>
+                        <select class="form-select" id="bus" name="bus">
+                            <option value="">Seleccione un bus</option>
+                            {% for bus in buses %}
+                            <option value="{{ bus.id }}" {% if employee.bus == bus %}selected{% endif %}>
+                                {{ bus.number }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100 mt-3">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

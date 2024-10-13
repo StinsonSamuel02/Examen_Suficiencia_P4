@@ -1,0 +1,1 @@
+[{"model": "bus.bus", "pk": 1, "fields": {"plate": "P123323", "number": "P3", "capacity": 16, "route": 6}}]

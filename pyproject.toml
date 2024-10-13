@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "examen-suficiencia-p4"
+version = "0.1.0"
+description = ""
+authors = ["SamuelStinson02 <samuelstinson02@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.2"
+django-dump-load-utf8 = "^0.0.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
