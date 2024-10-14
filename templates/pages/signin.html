@@ -32,10 +32,19 @@
             <label for="floatingPassword">Contraseña</label>
         </div>
 
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" onchange="TogglePassword()" id="togglePassword">
+            <label class="form-check-label" for="togglePassword">
+                Mostrar contraseña
+            </label>
+        </div>
+
+
         <button class="w-100 btn btn-lg btn-primary" type="submit">Autenticar</button>
     </form>
 </main>
 
+<script src="{% static 'js/scripts.js' %}"></script>
 
 </body>
 </html>
